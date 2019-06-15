@@ -3,7 +3,7 @@ import Fluxus
 
 struct LandmarkDetail: View {
   @EnvironmentObject var store: FluxStore
-  @EnvironmentObject var getters: AppRootGetter
+  @EnvironmentObject var getters: AppRootGetters
   @EnvironmentObject var landmarkState: LandmarkState
 
   var landmarkId: Int

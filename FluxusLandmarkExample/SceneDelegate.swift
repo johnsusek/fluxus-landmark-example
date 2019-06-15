@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let committer = AppRootCommitter()
     let dispatcher = AppRootDispatcher()
     let store = FluxStore(withState: state, withCommitter: committer, withDispatcher: dispatcher)
-    let getters = AppRootGetter(withState: state)
+    let getters = AppRootGetters(withState: state)
 
     window.rootViewController = UIHostingController(rootView: CategoryHome()
       .environmentObject(store)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryHome: View {
-  @EnvironmentObject var getters: AppRootGetter
+  @EnvironmentObject var getters: AppRootGetters
   @EnvironmentObject var landmarkState: LandmarkState
   @EnvironmentObject var hikeState: HikeState
   @EnvironmentObject var profileState: ProfileState
