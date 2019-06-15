@@ -8,11 +8,11 @@
 
 import UIKit
 import SwiftUI
+import Fluxus
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
-
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -21,7 +21,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     // Use a UIHostingController as window root view controller
     let window = UIWindow(frame: UIScreen.main.bounds)
-    window.rootViewController = UIHostingController(rootView: ContentView())
+
+    let state = AppRootState()
+    let committer = AppRootCommitter()
+    let dispatcher = AppRootDispatcher()
+    let store = FluxStore(withState: state, withCommitter: committer, withDispatcher: dispatcher)
+    let getters = AppRootGetter(withState: state)
+
+    window.rootViewController = UIHostingController(rootView: CategoryHome()
+      .environmentObject(store)
+      .environmentObject(getters)
+      .environmentObject(state.hikeState)
+      .environmentObject(state.profileState)
+      .environmentObject(state.preferencesState)
+      .environmentObject(state.landmarkState))
+
     self.window = window
     window.makeKeyAndVisible()
   }
