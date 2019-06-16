@@ -37,7 +37,7 @@
 		521DA3F122B33E8700DB5BBF /* LandmarkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA3F022B33E8700DB5BBF /* LandmarkState.swift */; };
 		521DA3F322B33F6C00DB5BBF /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA3F222B33F6C00DB5BBF /* ImageStore.swift */; };
 		521DA3FA22B3404300DB5BBF /* AppRootCommitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA3F822B3404300DB5BBF /* AppRootCommitter.swift */; };
-		521DA3FE22B3408600DB5BBF /* AppRootGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA3FD22B3408600DB5BBF /* AppRootGetter.swift */; };
+		521DA3FE22B3408600DB5BBF /* AppRootGetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA3FD22B3408600DB5BBF /* AppRootGetters.swift */; };
 		521DA40122B3437D00DB5BBF /* PreferencesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA40022B3437D00DB5BBF /* PreferencesState.swift */; };
 		521DA40322B35F3D00DB5BBF /* LandmarkMutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA40222B35F3D00DB5BBF /* LandmarkMutation.swift */; };
 		521DA40522B35F8700DB5BBF /* LandmarkCommitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA40422B35F8700DB5BBF /* LandmarkCommitter.swift */; };
@@ -47,6 +47,7 @@
 		5229410822B55803001DD152 /* LandmarkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5229410722B55803001DD152 /* LandmarkDispatcher.swift */; };
 		5229410E22B56982001DD152 /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = 5229410D22B56982001DD152 /* SWXMLHash */; };
 		524C208422B57315003860CC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 524C208322B57315003860CC /* Alamofire */; };
+		524C208622B5E2DB003860CC /* LandmarkGetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524C208522B5E2DB003860CC /* LandmarkGetters.swift */; };
 		52527FBD22B3BAA4000062C2 /* HexagonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52527FBC22B3BAA4000062C2 /* HexagonParameters.swift */; };
 		52527FC322B3BAE3000062C2 /* BadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52527FBF22B3BAE3000062C2 /* BadgeSymbol.swift */; };
 		52527FC422B3BAE3000062C2 /* RotatedBadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52527FC022B3BAE3000062C2 /* RotatedBadgeSymbol.swift */; };
@@ -101,7 +102,7 @@
 		521DA3F022B33E8700DB5BBF /* LandmarkState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkState.swift; sourceTree = "<group>"; };
 		521DA3F222B33F6C00DB5BBF /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		521DA3F822B3404300DB5BBF /* AppRootCommitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRootCommitter.swift; sourceTree = "<group>"; };
-		521DA3FD22B3408600DB5BBF /* AppRootGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRootGetter.swift; sourceTree = "<group>"; };
+		521DA3FD22B3408600DB5BBF /* AppRootGetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRootGetters.swift; sourceTree = "<group>"; };
 		521DA40022B3437D00DB5BBF /* PreferencesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesState.swift; sourceTree = "<group>"; };
 		521DA40222B35F3D00DB5BBF /* LandmarkMutation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkMutation.swift; sourceTree = "<group>"; };
 		521DA40422B35F8700DB5BBF /* LandmarkCommitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkCommitter.swift; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		5229410322B557B1001DD152 /* LandmarkAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkAction.swift; sourceTree = "<group>"; };
 		5229410522B557E7001DD152 /* AppRootDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootDispatcher.swift; sourceTree = "<group>"; };
 		5229410722B55803001DD152 /* LandmarkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDispatcher.swift; sourceTree = "<group>"; };
+		524C208522B5E2DB003860CC /* LandmarkGetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkGetters.swift; sourceTree = "<group>"; };
 		52527FBC22B3BAA4000062C2 /* HexagonParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonParameters.swift; sourceTree = "<group>"; };
 		52527FBF22B3BAE3000062C2 /* BadgeSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSymbol.swift; sourceTree = "<group>"; };
 		52527FC022B3BAE3000062C2 /* RotatedBadgeSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatedBadgeSymbol.swift; sourceTree = "<group>"; };
@@ -297,7 +299,8 @@
 		521DA3FC22B3407E00DB5BBF /* Getters */ = {
 			isa = PBXGroup;
 			children = (
-				521DA3FD22B3408600DB5BBF /* AppRootGetter.swift */,
+				521DA3FD22B3408600DB5BBF /* AppRootGetters.swift */,
+				524C208522B5E2DB003860CC /* LandmarkGetters.swift */,
 			);
 			path = Getters;
 			sourceTree = "<group>";
@@ -472,7 +475,7 @@
 				5229410822B55803001DD152 /* LandmarkDispatcher.swift in Sources */,
 				52A7E7C022B53E5A0065E2E4 /* ProfileState.swift in Sources */,
 				52527FC422B3BAE3000062C2 /* RotatedBadgeSymbol.swift in Sources */,
-				521DA3FE22B3408600DB5BBF /* AppRootGetter.swift in Sources */,
+				521DA3FE22B3408600DB5BBF /* AppRootGetters.swift in Sources */,
 				521DA3F122B33E8700DB5BBF /* LandmarkState.swift in Sources */,
 				521DA3FA22B3404300DB5BBF /* AppRootCommitter.swift in Sources */,
 				52527FC522B3BAE3000062C2 /* Badge.swift in Sources */,
@@ -501,6 +504,7 @@
 				5229410422B557B1001DD152 /* LandmarkAction.swift in Sources */,
 				52527FD122B3BBB9000062C2 /* GraphCapsule.swift in Sources */,
 				521DA40122B3437D00DB5BBF /* PreferencesState.swift in Sources */,
+				524C208622B5E2DB003860CC /* LandmarkGetters.swift in Sources */,
 				521DA3F322B33F6C00DB5BBF /* ImageStore.swift in Sources */,
 				52527FE522B3C2E5000062C2 /* ProfileEditor.swift in Sources */,
 				52527FDE22B3C29C000062C2 /* HikeBadge.swift in Sources */,

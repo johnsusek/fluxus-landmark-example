@@ -9,7 +9,7 @@ struct LandmarkDetail: View {
   var landmarkId: Int
 
   var body: some View {
-    let landmark = getters.landmark(withId: self.landmarkId)
+    let landmark = getters.landmark.landmark(withId: self.landmarkId)
 
     return VStack {
       MapView(coordinate: landmark.locationCoordinate)

@@ -16,14 +16,14 @@ struct CategoryHome: View {
   var body: some View {
     NavigationView {
       List {
-        FeaturedLandmarks(landmarks: getters.featuredLandmarks)
+        FeaturedLandmarks(landmarks: getters.landmark.featuredLandmarks)
           .scaledToFill()
           .frame(height: 200)
           .clipped()
           .listRowInsets(EdgeInsets())
 
-        ForEach(getters.landmarkCategories.keys.sorted().identified(by: \.self)) { key in
-          CategoryRow(categoryName: key, items: self.getters.landmarkCategories[key]!)
+        ForEach(getters.landmark.landmarkCategories.keys.sorted().identified(by: \.self)) { key in
+          CategoryRow(categoryName: key, items: self.getters.landmark.landmarkCategories[key]!)
         }.listRowInsets(EdgeInsets())
 
         NavigationButton(destination: LandmarkList()) {
