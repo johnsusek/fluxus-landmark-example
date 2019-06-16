@@ -21,20 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     // Use a UIHostingController as window root view controller
     let window = UIWindow(frame: UIScreen.main.bounds)
-
-    let state = AppRootState()
-    let committer = AppRootCommitter()
-    let dispatcher = AppRootDispatcher()
-    let store = FluxStore(withState: state, withCommitter: committer, withDispatcher: dispatcher)
-    let getters = AppRootGetters(withState: state)
-
-    window.rootViewController = UIHostingController(rootView: CategoryHome()
-      .environmentObject(store)
-      .environmentObject(getters)
-      .environmentObject(state.hikeState)
-      .environmentObject(state.profileState)
-      .environmentObject(state.preferencesState)
-      .environmentObject(state.landmarkState))
+    window.rootViewController = UIHostingController(rootView: CategoryHome().environmentObject(RootStore()))
 
     self.window = window
     window.makeKeyAndVisible()

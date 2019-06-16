@@ -8,22 +8,19 @@
 import SwiftUI
 
 struct CategoryHome: View {
-  @EnvironmentObject var getters: AppRootGetters
-  @EnvironmentObject var landmarkState: LandmarkState
-  @EnvironmentObject var hikeState: HikeState
-  @EnvironmentObject var profileState: ProfileState
+  @EnvironmentObject var store: RootStore
 
   var body: some View {
     NavigationView {
       List {
-        FeaturedLandmarks(landmarks: getters.landmark.featuredLandmarks)
+        FeaturedLandmarks(landmarks: store.state.landmark.featuredLandmarks)
           .scaledToFill()
           .frame(height: 200)
           .clipped()
           .listRowInsets(EdgeInsets())
 
-        ForEach(getters.landmark.landmarkCategories.keys.sorted().identified(by: \.self)) { key in
-          CategoryRow(categoryName: key, items: self.getters.landmark.landmarkCategories[key]!)
+        ForEach(store.state.landmark.landmarkCategories.keys.sorted().identified(by: \.self)) { key in
+          CategoryRow(categoryName: key, items: self.store.state.landmark.landmarkCategories[key]!)
         }.listRowInsets(EdgeInsets())
 
         NavigationButton(destination: LandmarkList()) {
@@ -38,9 +35,7 @@ struct CategoryHome: View {
             .accessibility(label: Text("User Profile"))
             .padding(),
           destination:
-            ProfileHost()
-              .environmentObject(hikeState)
-              .environmentObject(profileState)
+            ProfileHost().environmentObject(store)
         )
       )
     }

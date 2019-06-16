@@ -8,19 +8,19 @@
 
 import SwiftUI
 import Fluxus
+import Combine
 
 struct LandmarkList : View {
-  @EnvironmentObject var landmarkState: LandmarkState
-  @EnvironmentObject var preferencesState: PreferencesState
+  @EnvironmentObject var store: RootStore
 
   var body: some View {
     List {
-      Toggle(isOn: $preferencesState.showFavoritesOnly) {
+      Toggle(isOn: $store.state.preferences.showFavoritesOnly) {
         Text("Favorites only")
       }
 
-      ForEach(landmarkState.landmarks) { landmark in
-        if !self.preferencesState.showFavoritesOnly || landmark.isFavorite {
+      ForEach(store.state.landmark.landmarks) { landmark in
+        if !self.store.state.preferences.showFavoritesOnly || landmark.isFavorite {
           NavigationButton(destination: LandmarkDetail(landmarkId: landmark.id)) {
             LandmarkRow(landmark: landmark)
           }

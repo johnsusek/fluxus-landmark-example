@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileHost: View {
   @Environment(\.editMode) var editMode
-  @EnvironmentObject var profileState: ProfileState
+  @EnvironmentObject var store: RootStore
 
   var body: some View {
     VStack(alignment: .leading, spacing: 20) {
@@ -17,7 +17,7 @@ struct ProfileHost: View {
         if self.editMode?.value == .active {
           Button(action: {
             // Save the draft to the actual profile since user tapped Done
-            self.profileState.profile = self.profileState.draftProfile
+            self.store.state.profile.profile = self.store.state.profile.draftProfile
             self.editMode?.animation().value = .inactive
           }) {
             Text("Done")
@@ -32,9 +32,9 @@ struct ProfileHost: View {
       if self.editMode?.value == .inactive {
         ProfileSummary()
       } else {
-        ProfileEditor(profile: $profileState.draftProfile)
+        ProfileEditor(profile: $store.state.profile.draftProfile)
           .onDisappear {
-            self.profileState.draftProfile = self.profileState.profile
+            self.store.state.profile.draftProfile = self.store.state.profile.profile
         }
       }
     }

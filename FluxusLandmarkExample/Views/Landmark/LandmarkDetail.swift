@@ -2,14 +2,12 @@ import SwiftUI
 import Fluxus
 
 struct LandmarkDetail: View {
-  @EnvironmentObject var store: FluxStore
-  @EnvironmentObject var getters: AppRootGetters
-  @EnvironmentObject var landmarkState: LandmarkState
+  @EnvironmentObject var store: RootStore
 
   var landmarkId: Int
 
   var body: some View {
-    let landmark = getters.landmark.landmark(withId: self.landmarkId)
+    let landmark = store.state.landmark.landmark(withId: self.landmarkId)
 
     return VStack {
       MapView(coordinate: landmark.locationCoordinate)

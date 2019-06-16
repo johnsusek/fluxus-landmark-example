@@ -1,7 +1,9 @@
 import Fluxus
 
-final class LandmarkCommitter: Committer {
-  func commit(state: LandmarkState, mutation: LandmarkMutation) {
+struct LandmarkCommitter: Committer {
+  func commit(state: LandmarkState, mutation: LandmarkMutation) -> LandmarkState {
+    var state = state
+
     switch mutation {
 
     case .ToggleFavorite(let id):
@@ -13,7 +15,8 @@ final class LandmarkCommitter: Committer {
       if let index = state.landmarks.firstIndex(where: { $0.id == id }) {
         state.landmarks[index].parkDescription = parkDescription
       }
-
     }
+
+    return state
   }
 }
