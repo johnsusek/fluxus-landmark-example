@@ -1,6 +1,6 @@
 import Fluxus
 
-class LandmarkGetters: Getters<LandmarkState, AppRootGetters> {
+class LandmarkGetters: Getters<LandmarkState, AppRootGetters, AppRootState> {
   func landmark(withId id: Int) -> Landmark {
     return state.landmarks.first(where: { $0.id == id })!
   }
